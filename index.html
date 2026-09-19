@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8c3f5d">
+  <meta name="description" content="30 mensajes de esperanza para acompañarte en cada temporada de la vida.">
+  <meta name="author" content="Yamilet Tiffer">
+  <title>Mensajes de Vida para Cada Vida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-glow page-glow--one" aria-hidden="true"></div>
+  <div class="page-glow page-glow--two" aria-hidden="true"></div>
+
+  <header class="hero" id="inicio">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio">
+        <span class="brand__mark" aria-hidden="true">MV</span>
+        <span>Mensajes de Vida</span>
+      </a>
+      <a class="nav__link" href="#mensajes">Ver los mensajes</a>
+    </nav>
+
+    <div class="hero__content">
+      <p class="eyebrow">30 días · palabras para el corazón</p>
+      <h1>Hay un mensaje para <em>cada vida.</em></h1>
+      <p class="hero__intro">Encuentra una palabra de aliento para lo que estás viviendo hoy. Léela con calma y cópiala para compartir esperanza con alguien más.</p>
+      <a class="button button--primary" href="#mensajes" data-open-day="1">
+        Comenzar por el Día 1
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="hero__ornament" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="today" aria-labelledby="today-title">
+      <div class="today__number" id="today-day">01</div>
+      <div class="today__body">
+        <p class="eyebrow">Una palabra para hoy</p>
+        <h2 id="today-title">No tienes que caminar sola</h2>
+        <p id="today-preview">Aunque hoy el silencio parezca muy grande, tu vida sigue siendo vista, amada y sostenida.</p>
+      </div>
+      <button class="button button--soft" id="today-open" type="button">Leer mensaje</button>
+    </section>
+
+    <section class="library" id="mensajes" aria-labelledby="library-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Elige lo que necesitas</p>
+          <h2 id="library-title">Mensajes para cada temporada</h2>
+        </div>
+        <p><span id="result-count">30</span> mensajes disponibles</p>
+      </div>
+
+      <div class="toolbar" aria-label="Filtros de mensajes">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+          <label class="sr-only" for="search">Buscar en los mensajes</label>
+          <input id="search" type="search" placeholder="Buscar una palabra…" autocomplete="off">
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filtrar por situación"></div>
+      </div>
+
+      <div class="message-grid" id="message-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <p>No encontramos un mensaje con esas palabras.</p>
+        <button class="text-button" id="clear-filters" type="button">Ver todos los mensajes</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Creado por <strong>Yamilet Tiffer</strong> · Para acompañar, levantar y compartir esperanza.</p>
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
+
+  <dialog class="message-dialog" id="message-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-card">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar mensaje">×</button>
+      <div class="dialog-meta">
+        <span id="dialog-day">Día 1</span>
+        <span id="dialog-topic">Soledad</span>
+      </div>
+      <h2 id="dialog-title"></h2>
+      <div class="dialog-text" id="dialog-text"></div>
+      <p class="dialog-closing">Recuerda: siempre hay un mensaje de vida para cada vida</p>
+      <div class="dialog-actions">
+        <button class="button button--primary" id="copy-message" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+          <span>Copiar texto</span>
+        </button>
+        <div class="dialog-nav">
+          <button id="prev-message" type="button" aria-label="Mensaje anterior">←</button>
+          <span id="dialog-position">1 / 30</span>
+          <button id="next-message" type="button" aria-label="Mensaje siguiente">→</button>
+        </div>
+      </div>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+
+      <details class="social-tools">
+        <summary>Preparar para Facebook o Instagram</summary>
+        <div class="social-tools__body">
+          <div class="format-switch" role="group" aria-label="Formato para redes sociales">
+            <button type="button" data-social-mode="post" aria-pressed="true">Publicación</button>
+            <button type="button" data-social-mode="reel" aria-pressed="false">Guion de Reel</button>
+          </div>
+          <label for="social-editor">Edítalo a tu manera</label>
+          <textarea id="social-editor" rows="10" spellcheck="true"></textarea>
+          <div class="social-actions">
+            <button class="button button--soft" id="copy-social" type="button">Copiar para redes</button>
+            <button class="button button--primary" id="share-social" type="button">Compartir desde el teléfono</button>
+            <button class="button button--download" id="download-card" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Descargar tarjeta bonita
+            </button>
+          </div>
+          <p class="social-hint">La tarjeta conserva los colores y el diseño al publicarla en Facebook o Instagram.</p>
+          <p class="copy-status" id="social-status" role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
